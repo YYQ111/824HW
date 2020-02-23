@@ -1,0 +1,61 @@
+---
+title: "R Notebook"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+```{r}
+#9
+setwd("~/Downloads/824HW/d3")
+library(r2d3)
+r2d3(data=c(0.3, 0.6, 0.8, 0.95, 0.40, 0.20), script = "barchart.js")
+```
+
+```{r}
+#10
+r2d3(data = matrix(round(runif(16, 1, 10000)), ncol = 4, nrow = 4), script = "chord.js")
+
+
+```
+
+```{r}
+#11
+library(networkD3)
+
+# Create fake data
+src <- c("A", "A", "A", "A",
+        "B", "B", "C", "C", "D")
+target <- c("B", "C", "D", "J",
+            "E", "F", "G", "H", "I")
+networkData <- data.frame(src, target)
+# Plot
+simpleNetwork(networkData)
+```
+
+```{r}
+
+#12
+library(d3heatmap)
+url <- "http://datasets.flowingdata.com/ppg2008.csv"
+nba_players <- read.csv(url, row.names = 1)
+d3heatmap(nba_players, scale = "column")
+
+
+```
+
+```{r}
+#13
+setwd("~/Downloads/824HW/d3")
+r2d3(data = read.csv("flare.csv"), d3_version = 4, script = "bubbles.js")
+```
+
+```{r}
+#14
+r2d3(d3_version = 4, script = "stackedbars.js")
+```
+
+```{r}
+#15
+d3heatmap(euro.cross)
+```
